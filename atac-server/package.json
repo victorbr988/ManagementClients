@@ -1,0 +1,42 @@
+{
+  "name": "atac-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "module": "commonjs",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "start": "node dist/server.js",
+    "dev": "npm run lint && ts-node-dev --respawn --transpile-only -r tsconfig-paths/register server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback --all",
+    "seed": "knex seed:run"
+  },
+  "author": "victor",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/knex": "^0.16.1",
+    "eslint": "^9.7.0",
+    "globals": "^15.8.0",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@thi.ng/geom-tessellate": "^3.0.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "knex-postgis": "^0.14.3",
+    "pg": "^8.12.0",
+    "tsc-alias": "^1.8.10",
+    "typescript-eslint": "^8.0.0-alpha.10",
+    "zod": "^3.23.8"
+  }
+}
